@@ -1,6 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,40 +13,32 @@
     <!-- Estilos personalizados -->
     <link href="{% static 'css/styles.css' %}" rel="stylesheet">
 </head>
+
 <body class="bg-gray-100 text-gray-800 font-sans">
 
-    <header class="bg-white shadow-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-            <h1 class="text-2xl font-bold text-blue-600">MiApp</h1>
-            <nav>
-                <ul class="flex gap-6 text-sm">
-                    <li><a href="#" class="hover:text-blue-500">Inicio</a></li>
-                    <li><a href="#" class="hover:text-blue-500">Servicios</a></li>
-                    <li><a href="#" class="hover:text-blue-500">Contacto</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+
+    <!--{%include "navbar.html"%}-->
 
     <main class="mt-10 px-4 max-w-4xl mx-auto text-center">
-        <h2 class="text-3xl font-semibold text-gray-900 mb-4">Bienvenido a tu plataforma moderna</h2>
+        <h2 class="text-3xl font-semibold text-gray-900 my-4">Portafolio: Sebastian Tapia Rebolledo</h2>
+        <h4 class="my-2">Correo: sebatapiareb@gmail.com</h4>
+        <p class="my-8">Ingeniero informático especializado en el desarrollo de aplicaciones web y mobile.
+            A continuación se presentan algunos de los proyectos que he desarrollado a lo largo de mi carrera
+            profesional.
+            Cada uno de estos proyectos refleja mi compromiso con la calidad y la innovación en el desarrollo de
+            software.
+        </p>
         <p class="text-gray-600 mb-8">
-            Explora nuestra interfaz elegante, responsiva y rápida. Disfruta de una experiencia moderna y fluida.
+            Seleccione el proyecto que desea ver:
         </p>
 
-        <div class="bg-white rounded-xl shadow-md p-6 md:p-10 transition hover:shadow-xl">
-            <h3 class="text-xl font-bold text-blue-700 mb-4">Comienza ahora</h3>
-            <button class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-6 rounded-lg transition">
-                Crear cuenta
-            </button>
-        </div>
+        {% include "projects_list.html" %}
     </main>
 
-    <footer class="mt-16 bg-white text-center py-4 text-sm text-gray-500 border-t">
-        © {{ year }} MiApp. Todos los derechos reservados.
-    </footer>
+    {% include "footer.html" %}
 
     <!-- Scripts personalizados -->
     <script src="{% static 'js/main.js' %}"></script>
 </body>
+
 </html>
